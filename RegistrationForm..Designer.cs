@@ -188,7 +188,7 @@
             btnCreateAccount.FlatStyle = FlatStyle.Flat;
             btnCreateAccount.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateAccount.ForeColor = Color.FromArgb(249, 250, 251);
-            btnCreateAccount.Location = new Point(396, 623);
+            btnCreateAccount.Location = new Point(390, 633);
             btnCreateAccount.Name = "btnCreateAccount";
             btnCreateAccount.Size = new Size(234, 36);
             btnCreateAccount.TabIndex = 13;
@@ -200,18 +200,19 @@
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = Color.FromArgb(148, 163, 184);
-            lblLogin.Location = new Point(405, 674);
+            lblLogin.Location = new Point(390, 681);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(219, 20);
             lblLogin.TabIndex = 14;
             lblLogin.Text = "Already have an account? Login";
+            lblLogin.Click += lblLogin_Click;
             // 
             // lblFooter
             // 
             lblFooter.AutoSize = true;
             lblFooter.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFooter.ForeColor = Color.FromArgb(148, 163, 184);
-            lblFooter.Location = new Point(435, 706);
+            lblFooter.Location = new Point(426, 710);
             lblFooter.Name = "lblFooter";
             lblFooter.Size = new Size(161, 20);
             lblFooter.TabIndex = 15;
