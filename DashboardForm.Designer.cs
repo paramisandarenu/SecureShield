@@ -40,7 +40,25 @@
             btnReports = new Button();
             btnSettings = new Button();
             btnLogout = new Button();
+            lblWelcome = new Label();
+            lblDashboardSubtitle = new Label();
+            pnlScans = new Panel();
+            lblScansTitle = new Label();
+            lblScansValue = new Label();
+            pnlThreats = new Panel();
+            lblThreatsValue = new Label();
+            lblThreatsTitle = new Label();
+            pnlSafeURLs = new Panel();
+            lblSafeURLsValue = new Label();
+            lblSafeURLsTitle = new Label();
+            pnlRiskScore = new Panel();
+            lblRiskScoreValue = new Label();
+            lblRiskScoreTitle = new Label();
             pnlSidebar.SuspendLayout();
+            pnlScans.SuspendLayout();
+            pnlThreats.SuspendLayout();
+            pnlSafeURLs.SuspendLayout();
+            pnlRiskScore.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSidebar
@@ -206,12 +224,169 @@
             btnLogout.Text = "Logout";
             btnLogout.UseVisualStyleBackColor = false;
             // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.BackColor = Color.Transparent;
+            lblWelcome.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWelcome.ForeColor = Color.FromArgb(249, 250, 251);
+            lblWelcome.Location = new Point(432, 29);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(552, 60);
+            lblWelcome.TabIndex = 1;
+            lblWelcome.Text = "Welcome to SecureShield";
+            // 
+            // lblDashboardSubtitle
+            // 
+            lblDashboardSubtitle.AutoSize = true;
+            lblDashboardSubtitle.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDashboardSubtitle.ForeColor = Color.FromArgb(148, 163, 184);
+            lblDashboardSubtitle.Location = new Point(543, 101);
+            lblDashboardSubtitle.Name = "lblDashboardSubtitle";
+            lblDashboardSubtitle.Size = new Size(332, 25);
+            lblDashboardSubtitle.TabIndex = 2;
+            lblDashboardSubtitle.Text = "Monitor and analyze your security status";
+            // 
+            // pnlScans
+            // 
+            pnlScans.BackColor = Color.FromArgb(31, 41, 55);
+            pnlScans.Controls.Add(lblScansValue);
+            pnlScans.Controls.Add(lblScansTitle);
+            pnlScans.Location = new Point(443, 214);
+            pnlScans.Name = "pnlScans";
+            pnlScans.Size = new Size(190, 120);
+            pnlScans.TabIndex = 3;
+            // 
+            // lblScansTitle
+            // 
+            lblScansTitle.AutoSize = true;
+            lblScansTitle.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblScansTitle.ForeColor = Color.FromArgb(148, 163, 184);
+            lblScansTitle.Location = new Point(42, 12);
+            lblScansTitle.Name = "lblScansTitle";
+            lblScansTitle.Size = new Size(94, 23);
+            lblScansTitle.TabIndex = 0;
+            lblScansTitle.Text = "Total Scans";
+            // 
+            // lblScansValue
+            // 
+            lblScansValue.AutoSize = true;
+            lblScansValue.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblScansValue.ForeColor = Color.FromArgb(249, 250, 251);
+            lblScansValue.Location = new Point(64, 45);
+            lblScansValue.Name = "lblScansValue";
+            lblScansValue.Size = new Size(50, 60);
+            lblScansValue.TabIndex = 1;
+            lblScansValue.Text = "0";
+            // 
+            // pnlThreats
+            // 
+            pnlThreats.BackColor = Color.FromArgb(31, 41, 55);
+            pnlThreats.Controls.Add(lblThreatsValue);
+            pnlThreats.Controls.Add(lblThreatsTitle);
+            pnlThreats.Location = new Point(807, 214);
+            pnlThreats.Name = "pnlThreats";
+            pnlThreats.Size = new Size(190, 120);
+            pnlThreats.TabIndex = 4;
+            // 
+            // lblThreatsValue
+            // 
+            lblThreatsValue.AutoSize = true;
+            lblThreatsValue.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblThreatsValue.ForeColor = Color.FromArgb(249, 250, 251);
+            lblThreatsValue.Location = new Point(64, 45);
+            lblThreatsValue.Name = "lblThreatsValue";
+            lblThreatsValue.Size = new Size(50, 60);
+            lblThreatsValue.TabIndex = 1;
+            lblThreatsValue.Text = "0";
+            // 
+            // lblThreatsTitle
+            // 
+            lblThreatsTitle.AutoSize = true;
+            lblThreatsTitle.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThreatsTitle.ForeColor = Color.FromArgb(148, 163, 184);
+            lblThreatsTitle.Location = new Point(28, 12);
+            lblThreatsTitle.Name = "lblThreatsTitle";
+            lblThreatsTitle.Size = new Size(140, 23);
+            lblThreatsTitle.TabIndex = 0;
+            lblThreatsTitle.Text = "Threats Detected";
+            // 
+            // pnlSafeURLs
+            // 
+            pnlSafeURLs.BackColor = Color.FromArgb(31, 41, 55);
+            pnlSafeURLs.Controls.Add(lblSafeURLsValue);
+            pnlSafeURLs.Controls.Add(lblSafeURLsTitle);
+            pnlSafeURLs.Location = new Point(443, 493);
+            pnlSafeURLs.Name = "pnlSafeURLs";
+            pnlSafeURLs.Size = new Size(190, 120);
+            pnlSafeURLs.TabIndex = 5;
+            // 
+            // lblSafeURLsValue
+            // 
+            lblSafeURLsValue.AutoSize = true;
+            lblSafeURLsValue.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSafeURLsValue.ForeColor = Color.FromArgb(249, 250, 251);
+            lblSafeURLsValue.Location = new Point(64, 45);
+            lblSafeURLsValue.Name = "lblSafeURLsValue";
+            lblSafeURLsValue.Size = new Size(50, 60);
+            lblSafeURLsValue.TabIndex = 1;
+            lblSafeURLsValue.Text = "0";
+            // 
+            // lblSafeURLsTitle
+            // 
+            lblSafeURLsTitle.AutoSize = true;
+            lblSafeURLsTitle.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSafeURLsTitle.ForeColor = Color.FromArgb(148, 163, 184);
+            lblSafeURLsTitle.Location = new Point(52, 12);
+            lblSafeURLsTitle.Name = "lblSafeURLsTitle";
+            lblSafeURLsTitle.Size = new Size(84, 23);
+            lblSafeURLsTitle.TabIndex = 0;
+            lblSafeURLsTitle.Text = "Safe URLs";
+            // 
+            // pnlRiskScore
+            // 
+            pnlRiskScore.BackColor = Color.FromArgb(31, 41, 55);
+            pnlRiskScore.Controls.Add(lblRiskScoreValue);
+            pnlRiskScore.Controls.Add(lblRiskScoreTitle);
+            pnlRiskScore.Location = new Point(807, 493);
+            pnlRiskScore.Name = "pnlRiskScore";
+            pnlRiskScore.Size = new Size(190, 120);
+            pnlRiskScore.TabIndex = 6;
+            // 
+            // lblRiskScoreValue
+            // 
+            lblRiskScoreValue.AutoSize = true;
+            lblRiskScoreValue.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRiskScoreValue.ForeColor = Color.FromArgb(249, 250, 251);
+            lblRiskScoreValue.Location = new Point(30, 45);
+            lblRiskScoreValue.Name = "lblRiskScoreValue";
+            lblRiskScoreValue.Size = new Size(138, 60);
+            lblRiskScoreValue.TabIndex = 1;
+            lblRiskScoreValue.Text = "100%";
+            // 
+            // lblRiskScoreTitle
+            // 
+            lblRiskScoreTitle.AutoSize = true;
+            lblRiskScoreTitle.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblRiskScoreTitle.ForeColor = Color.FromArgb(148, 163, 184);
+            lblRiskScoreTitle.Location = new Point(42, 12);
+            lblRiskScoreTitle.Name = "lblRiskScoreTitle";
+            lblRiskScoreTitle.Size = new Size(117, 23);
+            lblRiskScoreTitle.TabIndex = 0;
+            lblRiskScoreTitle.Text = "Security Score";
+            // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 17, 32);
             ClientSize = new Size(1182, 703);
+            Controls.Add(pnlRiskScore);
+            Controls.Add(pnlSafeURLs);
+            Controls.Add(pnlThreats);
+            Controls.Add(pnlScans);
+            Controls.Add(lblDashboardSubtitle);
+            Controls.Add(lblWelcome);
             Controls.Add(pnlSidebar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "DashboardForm";
@@ -219,7 +394,16 @@
             Text = "SecureShield - Dashboard";
             pnlSidebar.ResumeLayout(false);
             pnlSidebar.PerformLayout();
+            pnlScans.ResumeLayout(false);
+            pnlScans.PerformLayout();
+            pnlThreats.ResumeLayout(false);
+            pnlThreats.PerformLayout();
+            pnlSafeURLs.ResumeLayout(false);
+            pnlSafeURLs.PerformLayout();
+            pnlRiskScore.ResumeLayout(false);
+            pnlRiskScore.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -236,5 +420,19 @@
         private Button btnSettings;
         private Button btnReports;
         private Button btnLogout;
+        private Label lblWelcome;
+        private Label lblDashboardSubtitle;
+        private Panel pnlScans;
+        private Label lblScansTitle;
+        private Label lblScansValue;
+        private Panel pnlThreats;
+        private Label lblThreatsValue;
+        private Label lblThreatsTitle;
+        private Panel pnlSafeURLs;
+        private Label lblSafeURLsValue;
+        private Label lblSafeURLsTitle;
+        private Panel pnlRiskScore;
+        private Label lblRiskScoreValue;
+        private Label lblRiskScoreTitle;
     }
 }
