@@ -222,7 +222,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 17, 32);
-            ClientSize = new Size(982, 735);
+            ClientSize = new Size(982, 752);
             Controls.Add(lblFooter);
             Controls.Add(lblLogin);
             Controls.Add(btnCreateAccount);
