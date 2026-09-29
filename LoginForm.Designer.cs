@@ -135,13 +135,15 @@
             // 
             lblRegister.AutoSize = true;
             lblRegister.BackColor = Color.Transparent;
+            lblRegister.Cursor = Cursors.Hand;
             lblRegister.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblRegister.ForeColor = Color.FromArgb(148, 163, 184);
+            lblRegister.ForeColor = Color.FromArgb(37, 99, 235);
             lblRegister.Location = new Point(342, 540);
             lblRegister.Name = "lblRegister";
             lblRegister.Size = new Size(239, 20);
             lblRegister.TabIndex = 8;
             lblRegister.Text = "Don't have an account? Create one";
+            lblRegister.Click += lblRegister_Click;
             // 
             // lblFooter
             // 
@@ -173,6 +175,7 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SecureShield - Login";
+            Click += LoginForm_Click;
             ResumeLayout(false);
             PerformLayout();
         }

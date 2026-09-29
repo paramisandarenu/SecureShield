@@ -198,8 +198,9 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
+            lblLogin.Cursor = Cursors.Hand;
             lblLogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLogin.ForeColor = Color.FromArgb(148, 163, 184);
+            lblLogin.ForeColor = Color.FromArgb(37, 99, 235);
             lblLogin.Location = new Point(390, 681);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(219, 20);

@@ -14,5 +14,17 @@ namespace SecureShield
         {
             InitializeComponent();
         }
+
+        private void LoginForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Show();
+            this.Hide();
+        }
     }
 }
