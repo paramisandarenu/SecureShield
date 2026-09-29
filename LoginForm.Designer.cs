@@ -1,0 +1,147 @@
+﻿namespace SecureShield
+{
+    partial class LoginForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            lblShield = new Label();
+            lblTitle = new Label();
+            lblSubtitle = new Label();
+            lblUsername = new Label();
+            txtUsername = new TextBox();
+            lblPassword = new Label();
+            textBox1 = new TextBox();
+            SuspendLayout();
+            // 
+            // lblShield
+            // 
+            lblShield.AutoSize = true;
+            lblShield.BackColor = Color.Transparent;
+            lblShield.Font = new Font("Segoe UI Emoji", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblShield.ForeColor = Color.FromArgb(37, 99, 235);
+            lblShield.Location = new Point(410, -4);
+            lblShield.Name = "lblShield";
+            lblShield.Size = new Size(116, 80);
+            lblShield.TabIndex = 0;
+            lblShield.Text = "🛡";
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.Transparent;
+            lblTitle.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.FromArgb(249, 250, 251);
+            lblTitle.Location = new Point(291, 76);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(348, 62);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Welcome Back";
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.AutoSize = true;
+            lblSubtitle.BackColor = Color.Transparent;
+            lblSubtitle.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSubtitle.ForeColor = Color.FromArgb(148, 163, 184);
+            lblSubtitle.Location = new Point(321, 138);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(301, 25);
+            lblSubtitle.TabIndex = 2;
+            lblSubtitle.Text = "Sign in to your SecureShield account";
+            // 
+            // lblUsername
+            // 
+            lblUsername.AutoSize = true;
+            lblUsername.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsername.ForeColor = Color.FromArgb(249, 250, 251);
+            lblUsername.Location = new Point(291, 197);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(87, 23);
+            lblUsername.TabIndex = 3;
+            lblUsername.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            txtUsername.AcceptsReturn = true;
+            txtUsername.Location = new Point(291, 223);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(350, 34);
+            txtUsername.TabIndex = 4;
+            // 
+            // lblPassword
+            // 
+            lblPassword.AutoSize = true;
+            lblPassword.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            lblPassword.Location = new Point(291, 278);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(80, 23);
+            lblPassword.TabIndex = 5;
+            lblPassword.Text = "Password";
+            // 
+            // textBox1
+            // 
+            textBox1.AcceptsReturn = true;
+            textBox1.Location = new Point(291, 304);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(350, 34);
+            textBox1.TabIndex = 6;
+            // 
+            // LoginForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(11, 17, 32);
+            ClientSize = new Size(982, 703);
+            Controls.Add(textBox1);
+            Controls.Add(lblPassword);
+            Controls.Add(txtUsername);
+            Controls.Add(lblUsername);
+            Controls.Add(lblSubtitle);
+            Controls.Add(lblTitle);
+            Controls.Add(lblShield);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "SecureShield - Login";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label lblShield;
+        private Label lblTitle;
+        private Label lblSubtitle;
+        private Label lblUsername;
+        private TextBox txtUsername;
+        private Label lblPassword;
+        private TextBox textBox1;
+    }
+}
