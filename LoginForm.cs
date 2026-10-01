@@ -26,5 +26,28 @@ namespace SecureShield
             registrationForm.Show();
             this.Hide();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text;
+
+            if (username == "admin" && password == "1234")
+            {
+                DashboardForm dashboardForm = new DashboardForm();
+                dashboardForm.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Invalid username or password.",
+                    "Login Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
     }
 }

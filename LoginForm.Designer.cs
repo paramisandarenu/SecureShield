@@ -130,6 +130,7 @@
             btnLogin.TabIndex = 7;
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // lblRegister
             // 
