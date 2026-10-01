@@ -23,5 +23,10 @@ namespace SecureShield
             loginForm.Show();
             this.Hide();
         }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -194,6 +194,7 @@
             btnCreateAccount.TabIndex = 13;
             btnCreateAccount.Text = "CREATE ACCOUNT";
             btnCreateAccount.UseVisualStyleBackColor = false;
+            btnCreateAccount.Click += btnCreateAccount_Click;
             // 
             // lblLogin
             // 
