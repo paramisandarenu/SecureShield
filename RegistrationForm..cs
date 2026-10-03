@@ -81,10 +81,12 @@ namespace SecureShield
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        string hashedPassword = PasswordHasher.HashPassword(password);
+
                         command.Parameters.AddWithValue("@FullName", fullName);
                         command.Parameters.AddWithValue("@Username", username);
                         command.Parameters.AddWithValue("@Email", email);
-                        command.Parameters.AddWithValue("@PasswordHash", password);
+                        command.Parameters.AddWithValue("@PasswordHash", hashedPassword);
 
                         command.ExecuteNonQuery();
                     }
