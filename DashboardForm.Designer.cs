@@ -44,46 +44,50 @@
             lblWelcome = new Label();
             lblDashboardSubtitle = new Label();
             pnlTotalScans = new Panel();
+            picTotalScans = new PictureBox();
             lblTotalScansValue = new Label();
             lblTotalScansTitle = new Label();
             pnlThreats = new Panel();
+            picThreats = new PictureBox();
             lblThreatsValue = new Label();
             lblThreatsTitle = new Label();
             pnlSafeURLs = new Panel();
+            picSafeURLs = new PictureBox();
             lblSafeURLsValue = new Label();
             lblSafeURLsTitle = new Label();
             pnlRiskScore = new Panel();
+            picRiskScore = new PictureBox();
             lblRiskScoreValue = new Label();
             lblRiskScoreTitle = new Label();
             lblUserName = new Label();
-            picTotalScans = new PictureBox();
-            picThreats = new PictureBox();
-            picSafeURLs = new PictureBox();
-            picRiskScore = new PictureBox();
             picUser = new PictureBox();
             lblProfileName = new Label();
             lblProfileArrow = new Label();
             pnlProfile = new Panel();
             pnlUserInfo = new Panel();
-            lblProfileTitle = new Label();
-            lblProfileFullName = new Label();
-            lblProfileUsername = new Label();
-            lblProfileEmail = new Label();
-            lblProfilePassword = new Label();
-            txtProfileFullName = new TextBox();
-            txtProfileUsername = new TextBox();
-            txtProfileEmail = new TextBox();
-            txtProfilePassword = new TextBox();
-            btnSaveProfile = new Button();
             btnCancelProfile = new Button();
+            btnSaveProfile = new Button();
+            txtProfilePassword = new TextBox();
+            txtProfileEmail = new TextBox();
+            txtProfileUsername = new TextBox();
+            txtProfileFullName = new TextBox();
+            lblProfilePassword = new Label();
+            lblProfileEmail = new Label();
+            lblProfileUsername = new Label();
+            lblProfileFullName = new Label();
+            lblProfileTitle = new Label();
+            lblCurrentPassword = new Label();
+            txtCurrentPassword = new TextBox();
+            lblConfirmNewPassword = new Label();
+            txtConfirmNewPassword = new TextBox();
             pnlSidebar.SuspendLayout();
             pnlTotalScans.SuspendLayout();
-            pnlThreats.SuspendLayout();
-            pnlSafeURLs.SuspendLayout();
-            pnlRiskScore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picTotalScans).BeginInit();
+            pnlThreats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picThreats).BeginInit();
+            pnlSafeURLs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picSafeURLs).BeginInit();
+            pnlRiskScore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picRiskScore).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             pnlUserInfo.SuspendLayout();
@@ -324,6 +328,17 @@
             pnlTotalScans.Size = new Size(190, 120);
             pnlTotalScans.TabIndex = 3;
             // 
+            // picTotalScans
+            // 
+            picTotalScans.BackColor = Color.Transparent;
+            picTotalScans.Image = (Image)resources.GetObject("picTotalScans.Image");
+            picTotalScans.Location = new Point(15, 12);
+            picTotalScans.Name = "picTotalScans";
+            picTotalScans.Size = new Size(32, 32);
+            picTotalScans.SizeMode = PictureBoxSizeMode.Zoom;
+            picTotalScans.TabIndex = 2;
+            picTotalScans.TabStop = false;
+            // 
             // lblTotalScansValue
             // 
             lblTotalScansValue.AutoSize = true;
@@ -356,6 +371,17 @@
             pnlThreats.Name = "pnlThreats";
             pnlThreats.Size = new Size(190, 120);
             pnlThreats.TabIndex = 4;
+            // 
+            // picThreats
+            // 
+            picThreats.BackColor = Color.Transparent;
+            picThreats.Image = (Image)resources.GetObject("picThreats.Image");
+            picThreats.Location = new Point(9, 12);
+            picThreats.Name = "picThreats";
+            picThreats.Size = new Size(32, 32);
+            picThreats.SizeMode = PictureBoxSizeMode.Zoom;
+            picThreats.TabIndex = 2;
+            picThreats.TabStop = false;
             // 
             // lblThreatsValue
             // 
@@ -390,6 +416,17 @@
             pnlSafeURLs.Size = new Size(190, 120);
             pnlSafeURLs.TabIndex = 5;
             // 
+            // picSafeURLs
+            // 
+            picSafeURLs.BackColor = Color.Transparent;
+            picSafeURLs.Image = (Image)resources.GetObject("picSafeURLs.Image");
+            picSafeURLs.Location = new Point(15, 12);
+            picSafeURLs.Name = "picSafeURLs";
+            picSafeURLs.Size = new Size(32, 32);
+            picSafeURLs.SizeMode = PictureBoxSizeMode.Zoom;
+            picSafeURLs.TabIndex = 2;
+            picSafeURLs.TabStop = false;
+            // 
             // lblSafeURLsValue
             // 
             lblSafeURLsValue.AutoSize = true;
@@ -422,6 +459,17 @@
             pnlRiskScore.Name = "pnlRiskScore";
             pnlRiskScore.Size = new Size(190, 120);
             pnlRiskScore.TabIndex = 6;
+            // 
+            // picRiskScore
+            // 
+            picRiskScore.BackColor = Color.Transparent;
+            picRiskScore.Image = (Image)resources.GetObject("picRiskScore.Image");
+            picRiskScore.Location = new Point(15, 12);
+            picRiskScore.Name = "picRiskScore";
+            picRiskScore.Size = new Size(32, 32);
+            picRiskScore.SizeMode = PictureBoxSizeMode.Zoom;
+            picRiskScore.TabIndex = 2;
+            picRiskScore.TabStop = false;
             // 
             // lblRiskScoreValue
             // 
@@ -456,55 +504,11 @@
             lblUserName.TabIndex = 7;
             lblUserName.Text = "User";
             // 
-            // picTotalScans
-            // 
-            picTotalScans.BackColor = Color.Transparent;
-            picTotalScans.Image = (Image)resources.GetObject("picTotalScans.Image");
-            picTotalScans.Location = new Point(15, 12);
-            picTotalScans.Name = "picTotalScans";
-            picTotalScans.Size = new Size(32, 32);
-            picTotalScans.SizeMode = PictureBoxSizeMode.Zoom;
-            picTotalScans.TabIndex = 2;
-            picTotalScans.TabStop = false;
-            // 
-            // picThreats
-            // 
-            picThreats.BackColor = Color.Transparent;
-            picThreats.Image = (Image)resources.GetObject("picThreats.Image");
-            picThreats.Location = new Point(9, 12);
-            picThreats.Name = "picThreats";
-            picThreats.Size = new Size(32, 32);
-            picThreats.SizeMode = PictureBoxSizeMode.Zoom;
-            picThreats.TabIndex = 2;
-            picThreats.TabStop = false;
-            // 
-            // picSafeURLs
-            // 
-            picSafeURLs.BackColor = Color.Transparent;
-            picSafeURLs.Image = (Image)resources.GetObject("picSafeURLs.Image");
-            picSafeURLs.Location = new Point(15, 12);
-            picSafeURLs.Name = "picSafeURLs";
-            picSafeURLs.Size = new Size(32, 32);
-            picSafeURLs.SizeMode = PictureBoxSizeMode.Zoom;
-            picSafeURLs.TabIndex = 2;
-            picSafeURLs.TabStop = false;
-            // 
-            // picRiskScore
-            // 
-            picRiskScore.BackColor = Color.Transparent;
-            picRiskScore.Image = (Image)resources.GetObject("picRiskScore.Image");
-            picRiskScore.Location = new Point(15, 12);
-            picRiskScore.Name = "picRiskScore";
-            picRiskScore.Size = new Size(32, 32);
-            picRiskScore.SizeMode = PictureBoxSizeMode.Zoom;
-            picRiskScore.TabIndex = 2;
-            picRiskScore.TabStop = false;
-            // 
             // picUser
             // 
             picUser.BackColor = Color.Transparent;
             picUser.Image = (Image)resources.GetObject("picUser.Image");
-            picUser.Location = new Point(1024, 35);
+            picUser.Location = new Point(955, 35);
             picUser.Name = "picUser";
             picUser.Size = new Size(28, 28);
             picUser.SizeMode = PictureBoxSizeMode.Zoom;
@@ -514,15 +518,16 @@
             // 
             // lblProfileName
             // 
-            lblProfileName.AutoSize = true;
+            lblProfileName.AutoEllipsis = true;
             lblProfileName.BackColor = Color.Transparent;
             lblProfileName.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProfileName.ForeColor = Color.FromArgb(249, 250, 251);
-            lblProfileName.Location = new Point(1058, 38);
+            lblProfileName.Location = new Point(989, 38);
             lblProfileName.Name = "lblProfileName";
-            lblProfileName.Size = new Size(50, 25);
+            lblProfileName.Size = new Size(150, 25);
             lblProfileName.TabIndex = 9;
             lblProfileName.Text = "User";
+            lblProfileName.TextAlign = ContentAlignment.MiddleLeft;
             lblProfileName.Click += pnlProfile_Click;
             // 
             // lblProfileArrow
@@ -531,7 +536,7 @@
             lblProfileArrow.BackColor = Color.Transparent;
             lblProfileArrow.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblProfileArrow.ForeColor = Color.FromArgb(148, 163, 184);
-            lblProfileArrow.Location = new Point(1110, 44);
+            lblProfileArrow.Location = new Point(1151, 44);
             lblProfileArrow.Name = "lblProfileArrow";
             lblProfileArrow.Size = new Size(19, 17);
             lblProfileArrow.TabIndex = 10;
@@ -541,16 +546,21 @@
             // pnlProfile
             // 
             pnlProfile.BackColor = Color.Transparent;
-            pnlProfile.Location = new Point(756, 12);
+            pnlProfile.Location = new Point(608, 88);
             pnlProfile.Name = "pnlProfile";
-            pnlProfile.Size = new Size(250, 61);
+            pnlProfile.Size = new Size(77, 61);
             pnlProfile.TabIndex = 11;
+            pnlProfile.Visible = false;
             pnlProfile.Click += pnlProfile_Click;
             // 
             // pnlUserInfo
             // 
             pnlUserInfo.BackColor = Color.FromArgb(31, 41, 55);
             pnlUserInfo.BorderStyle = BorderStyle.FixedSingle;
+            pnlUserInfo.Controls.Add(txtConfirmNewPassword);
+            pnlUserInfo.Controls.Add(lblConfirmNewPassword);
+            pnlUserInfo.Controls.Add(txtCurrentPassword);
+            pnlUserInfo.Controls.Add(lblCurrentPassword);
             pnlUserInfo.Controls.Add(btnCancelProfile);
             pnlUserInfo.Controls.Add(btnSaveProfile);
             pnlUserInfo.Controls.Add(txtProfilePassword);
@@ -564,21 +574,109 @@
             pnlUserInfo.Controls.Add(lblProfileTitle);
             pnlUserInfo.Location = new Point(870, 88);
             pnlUserInfo.Name = "pnlUserInfo";
-            pnlUserInfo.Size = new Size(300, 399);
+            pnlUserInfo.Size = new Size(300, 564);
             pnlUserInfo.TabIndex = 12;
             pnlUserInfo.Visible = false;
             // 
-            // lblProfileTitle
+            // btnCancelProfile
             // 
-            lblProfileTitle.AutoSize = true;
-            lblProfileTitle.BackColor = Color.Transparent;
-            lblProfileTitle.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProfileTitle.ForeColor = Color.FromArgb(249, 250, 251);
-            lblProfileTitle.Location = new Point(14, 11);
-            lblProfileTitle.Name = "lblProfileTitle";
-            lblProfileTitle.Size = new Size(165, 31);
-            lblProfileTitle.TabIndex = 0;
-            lblProfileTitle.Text = "👤 My Profile";
+            btnCancelProfile.BackColor = Color.FromArgb(55, 65, 81);
+            btnCancelProfile.FlatAppearance.BorderSize = 0;
+            btnCancelProfile.FlatStyle = FlatStyle.Flat;
+            btnCancelProfile.ForeColor = Color.FromArgb(249, 250, 251);
+            btnCancelProfile.Location = new Point(178, 508);
+            btnCancelProfile.Name = "btnCancelProfile";
+            btnCancelProfile.Size = new Size(90, 35);
+            btnCancelProfile.TabIndex = 13;
+            btnCancelProfile.Text = "Cancel";
+            btnCancelProfile.UseVisualStyleBackColor = false;
+            btnCancelProfile.Click += btnCancelProfile_Click;
+            // 
+            // btnSaveProfile
+            // 
+            btnSaveProfile.BackColor = Color.FromArgb(37, 99, 235);
+            btnSaveProfile.FlatAppearance.BorderSize = 0;
+            btnSaveProfile.FlatStyle = FlatStyle.Flat;
+            btnSaveProfile.ForeColor = Color.FromArgb(249, 250, 251);
+            btnSaveProfile.Location = new Point(20, 508);
+            btnSaveProfile.Name = "btnSaveProfile";
+            btnSaveProfile.Size = new Size(120, 35);
+            btnSaveProfile.TabIndex = 12;
+            btnSaveProfile.Text = "Save Changes";
+            btnSaveProfile.UseVisualStyleBackColor = false;
+            btnSaveProfile.Click += btnSaveProfile_Click;
+            // 
+            // txtProfilePassword
+            // 
+            txtProfilePassword.BackColor = Color.FromArgb(17, 24, 39);
+            txtProfilePassword.BorderStyle = BorderStyle.FixedSingle;
+            txtProfilePassword.ForeColor = Color.FromArgb(249, 250, 251);
+            txtProfilePassword.Location = new Point(18, 376);
+            txtProfilePassword.Name = "txtProfilePassword";
+            txtProfilePassword.PasswordChar = '●';
+            txtProfilePassword.Size = new Size(250, 27);
+            txtProfilePassword.TabIndex = 11;
+            txtProfilePassword.TextChanged += textBox1_TextChanged;
+            // 
+            // txtProfileEmail
+            // 
+            txtProfileEmail.BackColor = Color.FromArgb(17, 24, 39);
+            txtProfileEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtProfileEmail.ForeColor = Color.FromArgb(249, 250, 251);
+            txtProfileEmail.Location = new Point(17, 222);
+            txtProfileEmail.Name = "txtProfileEmail";
+            txtProfileEmail.Size = new Size(250, 27);
+            txtProfileEmail.TabIndex = 10;
+            // 
+            // txtProfileUsername
+            // 
+            txtProfileUsername.BackColor = Color.FromArgb(17, 24, 39);
+            txtProfileUsername.BorderStyle = BorderStyle.FixedSingle;
+            txtProfileUsername.ForeColor = Color.FromArgb(249, 250, 251);
+            txtProfileUsername.Location = new Point(17, 154);
+            txtProfileUsername.Name = "txtProfileUsername";
+            txtProfileUsername.Size = new Size(250, 27);
+            txtProfileUsername.TabIndex = 9;
+            // 
+            // txtProfileFullName
+            // 
+            txtProfileFullName.BackColor = Color.FromArgb(17, 24, 39);
+            txtProfileFullName.BorderStyle = BorderStyle.FixedSingle;
+            txtProfileFullName.ForeColor = Color.FromArgb(249, 250, 251);
+            txtProfileFullName.Location = new Point(17, 85);
+            txtProfileFullName.Name = "txtProfileFullName";
+            txtProfileFullName.Size = new Size(250, 27);
+            txtProfileFullName.TabIndex = 8;
+            // 
+            // lblProfilePassword
+            // 
+            lblProfilePassword.AutoSize = true;
+            lblProfilePassword.ForeColor = Color.FromArgb(148, 163, 184);
+            lblProfilePassword.Location = new Point(18, 353);
+            lblProfilePassword.Name = "lblProfilePassword";
+            lblProfilePassword.Size = new Size(104, 20);
+            lblProfilePassword.TabIndex = 7;
+            lblProfilePassword.Text = "New Password";
+            // 
+            // lblProfileEmail
+            // 
+            lblProfileEmail.AutoSize = true;
+            lblProfileEmail.ForeColor = Color.FromArgb(148, 163, 184);
+            lblProfileEmail.Location = new Point(17, 199);
+            lblProfileEmail.Name = "lblProfileEmail";
+            lblProfileEmail.Size = new Size(46, 20);
+            lblProfileEmail.TabIndex = 5;
+            lblProfileEmail.Text = "Email";
+            // 
+            // lblProfileUsername
+            // 
+            lblProfileUsername.AutoSize = true;
+            lblProfileUsername.ForeColor = Color.FromArgb(148, 163, 184);
+            lblProfileUsername.Location = new Point(17, 131);
+            lblProfileUsername.Name = "lblProfileUsername";
+            lblProfileUsername.Size = new Size(75, 20);
+            lblProfileUsername.TabIndex = 3;
+            lblProfileUsername.Text = "Username";
             // 
             // lblProfileFullName
             // 
@@ -592,104 +690,59 @@
             lblProfileFullName.TabIndex = 1;
             lblProfileFullName.Text = "Full Name";
             // 
-            // lblProfileUsername
+            // lblProfileTitle
             // 
-            lblProfileUsername.AutoSize = true;
-            lblProfileUsername.ForeColor = Color.FromArgb(148, 163, 184);
-            lblProfileUsername.Location = new Point(17, 131);
-            lblProfileUsername.Name = "lblProfileUsername";
-            lblProfileUsername.Size = new Size(75, 20);
-            lblProfileUsername.TabIndex = 3;
-            lblProfileUsername.Text = "Username";
+            lblProfileTitle.AutoSize = true;
+            lblProfileTitle.BackColor = Color.Transparent;
+            lblProfileTitle.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProfileTitle.ForeColor = Color.FromArgb(249, 250, 251);
+            lblProfileTitle.Location = new Point(14, 11);
+            lblProfileTitle.Name = "lblProfileTitle";
+            lblProfileTitle.Size = new Size(165, 31);
+            lblProfileTitle.TabIndex = 0;
+            lblProfileTitle.Text = "👤 My Profile";
             // 
-            // lblProfileEmail
+            // lblCurrentPassword
             // 
-            lblProfileEmail.AutoSize = true;
-            lblProfileEmail.ForeColor = Color.FromArgb(148, 163, 184);
-            lblProfileEmail.Location = new Point(17, 199);
-            lblProfileEmail.Name = "lblProfileEmail";
-            lblProfileEmail.Size = new Size(46, 20);
-            lblProfileEmail.TabIndex = 5;
-            lblProfileEmail.Text = "Email";
+            lblCurrentPassword.AutoSize = true;
+            lblCurrentPassword.ForeColor = Color.FromArgb(148, 163, 184);
+            lblCurrentPassword.Location = new Point(18, 276);
+            lblCurrentPassword.Name = "lblCurrentPassword";
+            lblCurrentPassword.Size = new Size(122, 20);
+            lblCurrentPassword.TabIndex = 14;
+            lblCurrentPassword.Text = "Current Password";
             // 
-            // lblProfilePassword
+            // txtCurrentPassword
             // 
-            lblProfilePassword.AutoSize = true;
-            lblProfilePassword.ForeColor = Color.FromArgb(148, 163, 184);
-            lblProfilePassword.Location = new Point(17, 264);
-            lblProfilePassword.Name = "lblProfilePassword";
-            lblProfilePassword.Size = new Size(104, 20);
-            lblProfilePassword.TabIndex = 7;
-            lblProfilePassword.Text = "New Password";
+            txtCurrentPassword.BackColor = Color.FromArgb(17, 24, 39);
+            txtCurrentPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtCurrentPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            txtCurrentPassword.Location = new Point(18, 302);
+            txtCurrentPassword.Name = "txtCurrentPassword";
+            txtCurrentPassword.PasswordChar = '●';
+            txtCurrentPassword.Size = new Size(250, 27);
+            txtCurrentPassword.TabIndex = 15;
             // 
-            // txtProfileFullName
+            // lblConfirmNewPassword
             // 
-            txtProfileFullName.BackColor = Color.FromArgb(17, 24, 39);
-            txtProfileFullName.BorderStyle = BorderStyle.FixedSingle;
-            txtProfileFullName.ForeColor = Color.FromArgb(249, 250, 251);
-            txtProfileFullName.Location = new Point(17, 85);
-            txtProfileFullName.Name = "txtProfileFullName";
-            txtProfileFullName.Size = new Size(250, 27);
-            txtProfileFullName.TabIndex = 8;
+            lblConfirmNewPassword.AutoSize = true;
+            lblConfirmNewPassword.ForeColor = Color.FromArgb(148, 163, 184);
+            lblConfirmNewPassword.Location = new Point(18, 429);
+            lblConfirmNewPassword.Name = "lblConfirmNewPassword";
+            lblConfirmNewPassword.Size = new Size(161, 20);
+            lblConfirmNewPassword.TabIndex = 16;
+            lblConfirmNewPassword.Text = "Confirm New Password";
             // 
-            // txtProfileUsername
+            // txtConfirmNewPassword
             // 
-            txtProfileUsername.BackColor = Color.FromArgb(17, 24, 39);
-            txtProfileUsername.BorderStyle = BorderStyle.FixedSingle;
-            txtProfileUsername.ForeColor = Color.FromArgb(249, 250, 251);
-            txtProfileUsername.Location = new Point(17, 154);
-            txtProfileUsername.Name = "txtProfileUsername";
-            txtProfileUsername.Size = new Size(250, 27);
-            txtProfileUsername.TabIndex = 9;
-            // 
-            // txtProfileEmail
-            // 
-            txtProfileEmail.BackColor = Color.FromArgb(17, 24, 39);
-            txtProfileEmail.BorderStyle = BorderStyle.FixedSingle;
-            txtProfileEmail.ForeColor = Color.FromArgb(249, 250, 251);
-            txtProfileEmail.Location = new Point(17, 222);
-            txtProfileEmail.Name = "txtProfileEmail";
-            txtProfileEmail.Size = new Size(250, 27);
-            txtProfileEmail.TabIndex = 10;
-            // 
-            // txtProfilePassword
-            // 
-            txtProfilePassword.BackColor = Color.FromArgb(17, 24, 39);
-            txtProfilePassword.BorderStyle = BorderStyle.FixedSingle;
-            txtProfilePassword.ForeColor = Color.FromArgb(249, 250, 251);
-            txtProfilePassword.Location = new Point(17, 287);
-            txtProfilePassword.Name = "txtProfilePassword";
-            txtProfilePassword.PasswordChar = '●';
-            txtProfilePassword.Size = new Size(250, 27);
-            txtProfilePassword.TabIndex = 11;
-            txtProfilePassword.TextChanged += textBox1_TextChanged;
-            // 
-            // btnSaveProfile
-            // 
-            btnSaveProfile.BackColor = Color.FromArgb(37, 99, 235);
-            btnSaveProfile.FlatAppearance.BorderSize = 0;
-            btnSaveProfile.FlatStyle = FlatStyle.Flat;
-            btnSaveProfile.ForeColor = Color.FromArgb(249, 250, 251);
-            btnSaveProfile.Location = new Point(17, 338);
-            btnSaveProfile.Name = "btnSaveProfile";
-            btnSaveProfile.Size = new Size(120, 35);
-            btnSaveProfile.TabIndex = 12;
-            btnSaveProfile.Text = "Save Changes";
-            btnSaveProfile.UseVisualStyleBackColor = false;
-            btnSaveProfile.Click += btnSaveProfile_Click;
-            // 
-            // btnCancelProfile
-            // 
-            btnCancelProfile.BackColor = Color.FromArgb(55, 65, 81);
-            btnCancelProfile.FlatAppearance.BorderSize = 0;
-            btnCancelProfile.FlatStyle = FlatStyle.Flat;
-            btnCancelProfile.ForeColor = Color.FromArgb(249, 250, 251);
-            btnCancelProfile.Location = new Point(177, 338);
-            btnCancelProfile.Name = "btnCancelProfile";
-            btnCancelProfile.Size = new Size(90, 35);
-            btnCancelProfile.TabIndex = 13;
-            btnCancelProfile.Text = "Cancel";
-            btnCancelProfile.UseVisualStyleBackColor = false;
+            txtConfirmNewPassword.BackColor = Color.FromArgb(17, 24, 39);
+            txtConfirmNewPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtConfirmNewPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            txtConfirmNewPassword.Location = new Point(18, 455);
+            txtConfirmNewPassword.Name = "txtConfirmNewPassword";
+            txtConfirmNewPassword.PasswordChar = '●';
+            txtConfirmNewPassword.Size = new Size(250, 27);
+            txtConfirmNewPassword.TabIndex = 17;
             // 
             // DashboardForm
             // 
@@ -718,15 +771,15 @@
             pnlSidebar.PerformLayout();
             pnlTotalScans.ResumeLayout(false);
             pnlTotalScans.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picTotalScans).EndInit();
             pnlThreats.ResumeLayout(false);
             pnlThreats.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picThreats).EndInit();
             pnlSafeURLs.ResumeLayout(false);
             pnlSafeURLs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picSafeURLs).EndInit();
             pnlRiskScore.ResumeLayout(false);
             pnlRiskScore.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picTotalScans).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picThreats).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picSafeURLs).EndInit();
             ((System.ComponentModel.ISupportInitialize)picRiskScore).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             pnlUserInfo.ResumeLayout(false);
@@ -788,5 +841,9 @@
         private TextBox txtProfilePassword;
         private Button btnSaveProfile;
         private Button btnCancelProfile;
+        private TextBox txtConfirmNewPassword;
+        private Label lblConfirmNewPassword;
+        private TextBox txtCurrentPassword;
+        private Label lblCurrentPassword;
     }
 }

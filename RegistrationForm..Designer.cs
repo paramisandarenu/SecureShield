@@ -222,27 +222,27 @@
             // 
             // btnShowPassword
             // 
-            btnShowPassword.BackColor = Color.FromArgb(31, 41, 55);
+            btnShowPassword.BackColor = Color.FromArgb(17, 24, 39);
+            btnShowPassword.FlatAppearance.BorderSize = 0;
             btnShowPassword.FlatStyle = FlatStyle.Flat;
-            btnShowPassword.ForeColor = Color.FromArgb(249, 250, 251);
-            btnShowPassword.Location = new Point(721, 470);
+            btnShowPassword.ForeColor = Color.FromArgb(148, 163, 184);
+            btnShowPassword.Location = new Point(706, 468);
             btnShowPassword.Name = "btnShowPassword";
-            btnShowPassword.Size = new Size(94, 29);
+            btnShowPassword.Size = new Size(35, 30);
             btnShowPassword.TabIndex = 16;
-            btnShowPassword.Text = "Show";
             btnShowPassword.UseVisualStyleBackColor = false;
             btnShowPassword.Click += btnShowPassword_Click;
             // 
             // btnShowConfirmPassword
             // 
-            btnShowConfirmPassword.BackColor = Color.FromArgb(31, 41, 55);
+            btnShowConfirmPassword.BackColor = Color.FromArgb(17, 24, 39);
+            btnShowConfirmPassword.FlatAppearance.BorderSize = 0;
             btnShowConfirmPassword.FlatStyle = FlatStyle.Flat;
-            btnShowConfirmPassword.ForeColor = Color.FromArgb(249, 250, 251);
-            btnShowConfirmPassword.Location = new Point(721, 560);
+            btnShowConfirmPassword.ForeColor = Color.FromArgb(148, 163, 184);
+            btnShowConfirmPassword.Location = new Point(706, 559);
             btnShowConfirmPassword.Name = "btnShowConfirmPassword";
-            btnShowConfirmPassword.Size = new Size(94, 29);
+            btnShowConfirmPassword.Size = new Size(35, 30);
             btnShowConfirmPassword.TabIndex = 17;
-            btnShowConfirmPassword.Text = "Show";
             btnShowConfirmPassword.UseVisualStyleBackColor = false;
             btnShowConfirmPassword.Click += btnShowConfirmPassword_Click;
             // 
