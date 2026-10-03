@@ -14,6 +14,11 @@ namespace SecureShield
         public LoginForm()
         {
             InitializeComponent();
+
+            txtPassword.PasswordChar = '●';
+            txtPassword.UseSystemPasswordChar = false;
+
+            btnShowPassword.Text = "Show";
         }
 
         private void LoginForm_Click(object sender, EventArgs e)
@@ -31,6 +36,7 @@ namespace SecureShield
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
+
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
@@ -43,7 +49,6 @@ namespace SecureShield
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );
-
                 return;
             }
 
@@ -54,31 +59,46 @@ namespace SecureShield
                     connection.Open();
 
                     string query = @"
-                SELECT COUNT(*)
+                SELECT PasswordHash
                 FROM Users
-                WHERE Username = @Username
-                AND PasswordHash = @PasswordHash";
+                WHERE Username = @Username";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@Username", username);
-                        command.Parameters.AddWithValue("@PasswordHash", password);
 
-                        int userCount = (int)command.ExecuteScalar();
+                        object result = command.ExecuteScalar();
 
-                        if (userCount > 0)
+                        if (result != null)
                         {
-                            MessageBox.Show(
-                                "Login successful!",
-                                "SecureShield",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information
-                            );
+                            string storedHash = result.ToString();
 
-                            DashboardForm dashboardForm = new DashboardForm();
-                            dashboardForm.Show();
+                            bool passwordCorrect =
+                                PasswordHasher.VerifyPassword(password, storedHash);
 
-                            this.Hide();
+                            if (passwordCorrect)
+                            {
+                                MessageBox.Show(
+                                    "Login successful!",
+                                    "SecureShield",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information
+                                );
+
+                                DashboardForm dashboardForm = new DashboardForm();
+                                dashboardForm.Show();
+
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "Invalid username or password.",
+                                    "Login Failed",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error
+                                );
+                            }
                         }
                         else
                         {
@@ -100,6 +120,21 @@ namespace SecureShield
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
+            }
+
+        }
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '●')
+            {
+                txtPassword.PasswordChar = '\0';
+                btnShowPassword.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '●';
+                btnShowPassword.Text = "Show";
             }
         }
     }

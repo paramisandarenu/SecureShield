@@ -38,6 +38,7 @@
             btnLogin = new Button();
             lblRegister = new Label();
             lblFooter = new Label();
+            btnShowPassword = new Button();
             SuspendLayout();
             // 
             // lblShield
@@ -111,11 +112,10 @@
             // 
             txtPassword.AcceptsReturn = true;
             txtPassword.Location = new Point(289, 401);
-            txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(350, 34);
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(350, 27);
             txtPassword.TabIndex = 6;
-            txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
@@ -156,12 +156,26 @@
             lblFooter.TabIndex = 9;
             lblFooter.Text = "Secure. Detect. Protect.";
             // 
+            // btnShowPassword
+            // 
+            btnShowPassword.BackColor = Color.FromArgb(31, 41, 55);
+            btnShowPassword.FlatStyle = FlatStyle.Flat;
+            btnShowPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            btnShowPassword.Location = new Point(672, 399);
+            btnShowPassword.Name = "btnShowPassword";
+            btnShowPassword.Size = new Size(94, 29);
+            btnShowPassword.TabIndex = 10;
+            btnShowPassword.Text = "Show";
+            btnShowPassword.UseVisualStyleBackColor = false;
+            btnShowPassword.Click += btnShowPassword_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 17, 32);
             ClientSize = new Size(982, 703);
+            Controls.Add(btnShowPassword);
             Controls.Add(lblFooter);
             Controls.Add(lblRegister);
             Controls.Add(btnLogin);
@@ -193,5 +207,6 @@
         private Button btnLogin;
         private Label lblRegister;
         private Label lblFooter;
+        private Button btnShowPassword;
     }
 }

@@ -44,6 +44,8 @@
             btnCreateAccount = new Button();
             lblLogin = new Label();
             lblFooter = new Label();
+            btnShowPassword = new Button();
+            btnShowConfirmPassword = new Button();
             SuspendLayout();
             // 
             // lblShield
@@ -155,11 +157,10 @@
             // txtPassword
             // 
             txtPassword.Location = new Point(336, 470);
-            txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(350, 39);
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(350, 27);
             txtPassword.TabIndex = 10;
-            txtPassword.UseSystemPasswordChar = true;
             // 
             // lblConfirmPassword
             // 
@@ -175,11 +176,10 @@
             // txtConfirmPassword
             // 
             txtConfirmPassword.Location = new Point(336, 562);
-            txtConfirmPassword.Multiline = true;
             txtConfirmPassword.Name = "txtConfirmPassword";
-            txtConfirmPassword.Size = new Size(350, 39);
+            txtConfirmPassword.PasswordChar = '●';
+            txtConfirmPassword.Size = new Size(350, 27);
             txtConfirmPassword.TabIndex = 12;
-            txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // btnCreateAccount
             // 
@@ -220,12 +220,40 @@
             lblFooter.TabIndex = 15;
             lblFooter.Text = "Secure. Detect. Protect.";
             // 
+            // btnShowPassword
+            // 
+            btnShowPassword.BackColor = Color.FromArgb(31, 41, 55);
+            btnShowPassword.FlatStyle = FlatStyle.Flat;
+            btnShowPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            btnShowPassword.Location = new Point(721, 470);
+            btnShowPassword.Name = "btnShowPassword";
+            btnShowPassword.Size = new Size(94, 29);
+            btnShowPassword.TabIndex = 16;
+            btnShowPassword.Text = "Show";
+            btnShowPassword.UseVisualStyleBackColor = false;
+            btnShowPassword.Click += btnShowPassword_Click;
+            // 
+            // btnShowConfirmPassword
+            // 
+            btnShowConfirmPassword.BackColor = Color.FromArgb(31, 41, 55);
+            btnShowConfirmPassword.FlatStyle = FlatStyle.Flat;
+            btnShowConfirmPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            btnShowConfirmPassword.Location = new Point(721, 560);
+            btnShowConfirmPassword.Name = "btnShowConfirmPassword";
+            btnShowConfirmPassword.Size = new Size(94, 29);
+            btnShowConfirmPassword.TabIndex = 17;
+            btnShowConfirmPassword.Text = "Show";
+            btnShowConfirmPassword.UseVisualStyleBackColor = false;
+            btnShowConfirmPassword.Click += btnShowConfirmPassword_Click;
+            // 
             // RegistrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 17, 32);
             ClientSize = new Size(982, 752);
+            Controls.Add(btnShowConfirmPassword);
+            Controls.Add(btnShowPassword);
             Controls.Add(lblFooter);
             Controls.Add(lblLogin);
             Controls.Add(btnCreateAccount);
@@ -268,5 +296,7 @@
         private Button btnCreateAccount;
         private Label lblLogin;
         private Label lblFooter;
+        private Button btnShowPassword;
+        private Button btnShowConfirmPassword;
     }
 }

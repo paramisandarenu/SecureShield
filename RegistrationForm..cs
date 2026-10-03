@@ -9,6 +9,15 @@ namespace SecureShield
         public RegistrationForm()
         {
             InitializeComponent();
+
+            txtPassword.PasswordChar = '●';
+            txtPassword.UseSystemPasswordChar = false;
+
+            txtConfirmPassword.PasswordChar = '●';
+            txtConfirmPassword.UseSystemPasswordChar = false;
+
+            btnShowPassword.Text = "Show";
+            btnShowConfirmPassword.Text = "Show";
         }
 
         private void lblSubtitle_Click(object sender, EventArgs e)
@@ -123,6 +132,33 @@ namespace SecureShield
             }
         }
 
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '●')
+            {
+                txtPassword.PasswordChar = '\0';
+                btnShowPassword.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '●';
+                btnShowPassword.Text = "Show";
+            }
+        }
+
+        private void btnShowConfirmPassword_Click(object sender, EventArgs e)
+        {
+            if (txtConfirmPassword.PasswordChar == '●')
+            {
+                txtConfirmPassword.PasswordChar = '\0';
+                btnShowConfirmPassword.Text = "Hide";
+            }
+            else
+            {
+                txtConfirmPassword.PasswordChar = '●';
+                btnShowConfirmPassword.Text = "Show";
+            }
+        }
     }
 }
     
