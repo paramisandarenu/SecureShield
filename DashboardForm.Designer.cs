@@ -65,6 +65,10 @@
             lblProfileArrow = new Label();
             pnlProfile = new Panel();
             pnlUserInfo = new Panel();
+            txtConfirmNewPassword = new TextBox();
+            lblConfirmNewPassword = new Label();
+            txtCurrentPassword = new TextBox();
+            lblCurrentPassword = new Label();
             btnCancelProfile = new Button();
             btnSaveProfile = new Button();
             txtProfilePassword = new TextBox();
@@ -76,10 +80,12 @@
             lblProfileUsername = new Label();
             lblProfileFullName = new Label();
             lblProfileTitle = new Label();
-            lblCurrentPassword = new Label();
-            txtCurrentPassword = new TextBox();
-            lblConfirmNewPassword = new Label();
-            txtConfirmNewPassword = new TextBox();
+            pnlSecurityOverview = new Panel();
+            pictureBox1 = new PictureBox();
+            pnlScanActivity = new Panel();
+            lblScanActivityData = new Label();
+            lblScanActivity = new Label();
+            lblSecurityOverview = new Label();
             pnlSidebar.SuspendLayout();
             pnlTotalScans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picTotalScans).BeginInit();
@@ -91,6 +97,9 @@
             ((System.ComponentModel.ISupportInitialize)picRiskScore).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picUser).BeginInit();
             pnlUserInfo.SuspendLayout();
+            pnlSecurityOverview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlScanActivity.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSidebar
@@ -572,11 +581,54 @@
             pnlUserInfo.Controls.Add(lblProfileUsername);
             pnlUserInfo.Controls.Add(lblProfileFullName);
             pnlUserInfo.Controls.Add(lblProfileTitle);
-            pnlUserInfo.Location = new Point(870, 88);
+            pnlUserInfo.Location = new Point(849, 88);
             pnlUserInfo.Name = "pnlUserInfo";
             pnlUserInfo.Size = new Size(300, 564);
             pnlUserInfo.TabIndex = 12;
             pnlUserInfo.Visible = false;
+            pnlUserInfo.Paint += pnlUserInfo_Paint;
+            // 
+            // txtConfirmNewPassword
+            // 
+            txtConfirmNewPassword.BackColor = Color.FromArgb(17, 24, 39);
+            txtConfirmNewPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtConfirmNewPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            txtConfirmNewPassword.Location = new Point(18, 455);
+            txtConfirmNewPassword.Name = "txtConfirmNewPassword";
+            txtConfirmNewPassword.PasswordChar = '●';
+            txtConfirmNewPassword.Size = new Size(250, 27);
+            txtConfirmNewPassword.TabIndex = 17;
+            // 
+            // lblConfirmNewPassword
+            // 
+            lblConfirmNewPassword.AutoSize = true;
+            lblConfirmNewPassword.ForeColor = Color.FromArgb(148, 163, 184);
+            lblConfirmNewPassword.Location = new Point(18, 429);
+            lblConfirmNewPassword.Name = "lblConfirmNewPassword";
+            lblConfirmNewPassword.Size = new Size(161, 20);
+            lblConfirmNewPassword.TabIndex = 16;
+            lblConfirmNewPassword.Text = "Confirm New Password";
+            // 
+            // txtCurrentPassword
+            // 
+            txtCurrentPassword.BackColor = Color.FromArgb(17, 24, 39);
+            txtCurrentPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtCurrentPassword.ForeColor = Color.FromArgb(249, 250, 251);
+            txtCurrentPassword.Location = new Point(18, 302);
+            txtCurrentPassword.Name = "txtCurrentPassword";
+            txtCurrentPassword.PasswordChar = '●';
+            txtCurrentPassword.Size = new Size(250, 27);
+            txtCurrentPassword.TabIndex = 15;
+            // 
+            // lblCurrentPassword
+            // 
+            lblCurrentPassword.AutoSize = true;
+            lblCurrentPassword.ForeColor = Color.FromArgb(148, 163, 184);
+            lblCurrentPassword.Location = new Point(18, 276);
+            lblCurrentPassword.Name = "lblCurrentPassword";
+            lblCurrentPassword.Size = new Size(122, 20);
+            lblCurrentPassword.TabIndex = 14;
+            lblCurrentPassword.Text = "Current Password";
             // 
             // btnCancelProfile
             // 
@@ -696,53 +748,85 @@
             lblProfileTitle.BackColor = Color.Transparent;
             lblProfileTitle.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProfileTitle.ForeColor = Color.FromArgb(249, 250, 251);
-            lblProfileTitle.Location = new Point(14, 11);
+            lblProfileTitle.Location = new Point(14, 9);
             lblProfileTitle.Name = "lblProfileTitle";
             lblProfileTitle.Size = new Size(165, 31);
             lblProfileTitle.TabIndex = 0;
             lblProfileTitle.Text = "👤 My Profile";
+            lblProfileTitle.Click += lblProfileTitle_Click;
             // 
-            // lblCurrentPassword
+            // pnlSecurityOverview
             // 
-            lblCurrentPassword.AutoSize = true;
-            lblCurrentPassword.ForeColor = Color.FromArgb(148, 163, 184);
-            lblCurrentPassword.Location = new Point(18, 276);
-            lblCurrentPassword.Name = "lblCurrentPassword";
-            lblCurrentPassword.Size = new Size(122, 20);
-            lblCurrentPassword.TabIndex = 14;
-            lblCurrentPassword.Text = "Current Password";
+            pnlSecurityOverview.BackColor = Color.FromArgb(31, 41, 55);
+            pnlSecurityOverview.BorderStyle = BorderStyle.FixedSingle;
+            pnlSecurityOverview.Controls.Add(pictureBox1);
+            pnlSecurityOverview.Controls.Add(pnlScanActivity);
+            pnlSecurityOverview.Controls.Add(lblSecurityOverview);
+            pnlSecurityOverview.Location = new Point(270, 322);
+            pnlSecurityOverview.Name = "pnlSecurityOverview";
+            pnlSecurityOverview.Size = new Size(879, 250);
+            pnlSecurityOverview.TabIndex = 13;
+            pnlSecurityOverview.Paint += panel1_Paint;
             // 
-            // txtCurrentPassword
+            // pictureBox1
             // 
-            txtCurrentPassword.BackColor = Color.FromArgb(17, 24, 39);
-            txtCurrentPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtCurrentPassword.ForeColor = Color.FromArgb(249, 250, 251);
-            txtCurrentPassword.Location = new Point(18, 302);
-            txtCurrentPassword.Name = "txtCurrentPassword";
-            txtCurrentPassword.PasswordChar = '●';
-            txtCurrentPassword.Size = new Size(250, 27);
-            txtCurrentPassword.TabIndex = 15;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(30, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
-            // lblConfirmNewPassword
+            // pnlScanActivity
             // 
-            lblConfirmNewPassword.AutoSize = true;
-            lblConfirmNewPassword.ForeColor = Color.FromArgb(148, 163, 184);
-            lblConfirmNewPassword.Location = new Point(18, 429);
-            lblConfirmNewPassword.Name = "lblConfirmNewPassword";
-            lblConfirmNewPassword.Size = new Size(161, 20);
-            lblConfirmNewPassword.TabIndex = 16;
-            lblConfirmNewPassword.Text = "Confirm New Password";
+            pnlScanActivity.BackColor = Color.FromArgb(17, 24, 39);
+            pnlScanActivity.BorderStyle = BorderStyle.FixedSingle;
+            pnlScanActivity.Controls.Add(lblScanActivityData);
+            pnlScanActivity.Controls.Add(lblScanActivity);
+            pnlScanActivity.Location = new Point(27, 68);
+            pnlScanActivity.Name = "pnlScanActivity";
+            pnlScanActivity.Size = new Size(320, 162);
+            pnlScanActivity.TabIndex = 1;
+            pnlScanActivity.Paint += pnlScanActivity_Paint;
             // 
-            // txtConfirmNewPassword
+            // lblScanActivityData
             // 
-            txtConfirmNewPassword.BackColor = Color.FromArgb(17, 24, 39);
-            txtConfirmNewPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtConfirmNewPassword.ForeColor = Color.FromArgb(249, 250, 251);
-            txtConfirmNewPassword.Location = new Point(18, 455);
-            txtConfirmNewPassword.Name = "txtConfirmNewPassword";
-            txtConfirmNewPassword.PasswordChar = '●';
-            txtConfirmNewPassword.Size = new Size(250, 27);
-            txtConfirmNewPassword.TabIndex = 17;
+            lblScanActivityData.AutoSize = true;
+            lblScanActivityData.BackColor = Color.Transparent;
+            lblScanActivityData.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblScanActivityData.ForeColor = Color.FromArgb(148, 163, 184);
+            lblScanActivityData.Location = new Point(15, 70);
+            lblScanActivityData.Name = "lblScanActivityData";
+            lblScanActivityData.Size = new Size(182, 23);
+            lblScanActivityData.TabIndex = 1;
+            lblScanActivityData.Text = "No scan data available";
+            // 
+            // lblScanActivity
+            // 
+            lblScanActivity.AutoSize = true;
+            lblScanActivity.BackColor = Color.Transparent;
+            lblScanActivity.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblScanActivity.ForeColor = Color.FromArgb(249, 250, 251);
+            lblScanActivity.Location = new Point(15, 12);
+            lblScanActivity.Name = "lblScanActivity";
+            lblScanActivity.Size = new Size(123, 25);
+            lblScanActivity.TabIndex = 0;
+            lblScanActivity.Text = "Scan Activity";
+            // 
+            // lblSecurityOverview
+            // 
+            lblSecurityOverview.AutoSize = true;
+            lblSecurityOverview.BackColor = Color.Transparent;
+            lblSecurityOverview.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSecurityOverview.ForeColor = Color.FromArgb(249, 250, 251);
+            lblSecurityOverview.ImageAlign = ContentAlignment.MiddleLeft;
+            lblSecurityOverview.Location = new Point(64, 17);
+            lblSecurityOverview.Name = "lblSecurityOverview";
+            lblSecurityOverview.Size = new Size(207, 31);
+            lblSecurityOverview.TabIndex = 0;
+            lblSecurityOverview.Text = "Security Overview";
+            lblSecurityOverview.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // DashboardForm
             // 
@@ -751,6 +835,7 @@
             BackColor = Color.FromArgb(11, 17, 32);
             ClientSize = new Size(1182, 703);
             Controls.Add(pnlUserInfo);
+            Controls.Add(pnlSecurityOverview);
             Controls.Add(pnlProfile);
             Controls.Add(lblProfileArrow);
             Controls.Add(lblProfileName);
@@ -767,6 +852,7 @@
             Name = "DashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SecureShield - Dashboard";
+            Load += DashboardForm_Load;
             pnlSidebar.ResumeLayout(false);
             pnlSidebar.PerformLayout();
             pnlTotalScans.ResumeLayout(false);
@@ -784,6 +870,11 @@
             ((System.ComponentModel.ISupportInitialize)picUser).EndInit();
             pnlUserInfo.ResumeLayout(false);
             pnlUserInfo.PerformLayout();
+            pnlSecurityOverview.ResumeLayout(false);
+            pnlSecurityOverview.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlScanActivity.ResumeLayout(false);
+            pnlScanActivity.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -845,5 +936,11 @@
         private Label lblConfirmNewPassword;
         private TextBox txtCurrentPassword;
         private Label lblCurrentPassword;
+        private Panel pnlSecurityOverview;
+        private Label lblSecurityOverview;
+        private Panel pnlScanActivity;
+        private Label lblScanActivity;
+        private PictureBox pictureBox1;
+        private Label lblScanActivityData;
     }
 }

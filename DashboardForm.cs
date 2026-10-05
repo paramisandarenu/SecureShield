@@ -304,5 +304,45 @@ namespace SecureShield
 
             pnlUserInfo.Visible = false;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlUserInfo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblProfileTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlScanActivity_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
