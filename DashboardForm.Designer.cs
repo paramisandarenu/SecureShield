@@ -86,6 +86,11 @@
             lblScanActivityData = new Label();
             lblScanActivity = new Label();
             lblSecurityOverview = new Label();
+            pnlThreatDistribution = new Panel();
+            lblThreatDistribution = new Label();
+            lblSafeCount = new Label();
+            lblSuspiciousCount = new Label();
+            lblThreatCount = new Label();
             pnlSidebar.SuspendLayout();
             pnlTotalScans.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picTotalScans).BeginInit();
@@ -100,6 +105,7 @@
             pnlSecurityOverview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlScanActivity.SuspendLayout();
+            pnlThreatDistribution.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSidebar
@@ -118,7 +124,7 @@
             pnlSidebar.Controls.Add(lblSidebarShield);
             pnlSidebar.Location = new Point(3, 12);
             pnlSidebar.Name = "pnlSidebar";
-            pnlSidebar.Size = new Size(240, 690);
+            pnlSidebar.Size = new Size(240, 721);
             pnlSidebar.TabIndex = 0;
             // 
             // btnLogout
@@ -130,7 +136,7 @@
             btnLogout.ForeColor = Color.FromArgb(249, 250, 251);
             btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(10, 595);
+            btnLogout.Location = new Point(12, 631);
             btnLogout.Name = "btnLogout";
             btnLogout.Padding = new Padding(15, 0, 0, 0);
             btnLogout.Size = new Size(210, 45);
@@ -555,7 +561,7 @@
             // pnlProfile
             // 
             pnlProfile.BackColor = Color.Transparent;
-            pnlProfile.Location = new Point(608, 88);
+            pnlProfile.Location = new Point(614, 41);
             pnlProfile.Name = "pnlProfile";
             pnlProfile.Size = new Size(77, 61);
             pnlProfile.TabIndex = 11;
@@ -581,7 +587,7 @@
             pnlUserInfo.Controls.Add(lblProfileUsername);
             pnlUserInfo.Controls.Add(lblProfileFullName);
             pnlUserInfo.Controls.Add(lblProfileTitle);
-            pnlUserInfo.Location = new Point(849, 88);
+            pnlUserInfo.Location = new Point(862, 77);
             pnlUserInfo.Name = "pnlUserInfo";
             pnlUserInfo.Size = new Size(300, 564);
             pnlUserInfo.TabIndex = 12;
@@ -759,19 +765,20 @@
             // 
             pnlSecurityOverview.BackColor = Color.FromArgb(31, 41, 55);
             pnlSecurityOverview.BorderStyle = BorderStyle.FixedSingle;
+            pnlSecurityOverview.Controls.Add(pnlThreatDistribution);
             pnlSecurityOverview.Controls.Add(pictureBox1);
             pnlSecurityOverview.Controls.Add(pnlScanActivity);
             pnlSecurityOverview.Controls.Add(lblSecurityOverview);
             pnlSecurityOverview.Location = new Point(270, 322);
             pnlSecurityOverview.Name = "pnlSecurityOverview";
-            pnlSecurityOverview.Size = new Size(879, 250);
+            pnlSecurityOverview.Size = new Size(879, 267);
             pnlSecurityOverview.TabIndex = 13;
             pnlSecurityOverview.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(30, 20);
+            pictureBox1.Location = new Point(29, 17);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 32);
             pictureBox1.TabIndex = 1;
@@ -784,9 +791,9 @@
             pnlScanActivity.BorderStyle = BorderStyle.FixedSingle;
             pnlScanActivity.Controls.Add(lblScanActivityData);
             pnlScanActivity.Controls.Add(lblScanActivity);
-            pnlScanActivity.Location = new Point(27, 68);
+            pnlScanActivity.Location = new Point(29, 68);
             pnlScanActivity.Name = "pnlScanActivity";
-            pnlScanActivity.Size = new Size(320, 162);
+            pnlScanActivity.Size = new Size(367, 162);
             pnlScanActivity.TabIndex = 1;
             pnlScanActivity.Paint += pnlScanActivity_Paint;
             // 
@@ -821,19 +828,80 @@
             lblSecurityOverview.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSecurityOverview.ForeColor = Color.FromArgb(249, 250, 251);
             lblSecurityOverview.ImageAlign = ContentAlignment.MiddleLeft;
-            lblSecurityOverview.Location = new Point(64, 17);
+            lblSecurityOverview.Location = new Point(67, 18);
             lblSecurityOverview.Name = "lblSecurityOverview";
             lblSecurityOverview.Size = new Size(207, 31);
             lblSecurityOverview.TabIndex = 0;
             lblSecurityOverview.Text = "Security Overview";
             lblSecurityOverview.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pnlThreatDistribution
+            // 
+            pnlThreatDistribution.BackColor = Color.FromArgb(17, 24, 39);
+            pnlThreatDistribution.BorderStyle = BorderStyle.FixedSingle;
+            pnlThreatDistribution.Controls.Add(lblThreatCount);
+            pnlThreatDistribution.Controls.Add(lblSuspiciousCount);
+            pnlThreatDistribution.Controls.Add(lblSafeCount);
+            pnlThreatDistribution.Controls.Add(lblThreatDistribution);
+            pnlThreatDistribution.Location = new Point(476, 68);
+            pnlThreatDistribution.Name = "pnlThreatDistribution";
+            pnlThreatDistribution.Size = new Size(367, 162);
+            pnlThreatDistribution.TabIndex = 2;
+            // 
+            // lblThreatDistribution
+            // 
+            lblThreatDistribution.AutoSize = true;
+            lblThreatDistribution.BackColor = Color.Transparent;
+            lblThreatDistribution.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblThreatDistribution.ForeColor = Color.FromArgb(249, 250, 251);
+            lblThreatDistribution.Location = new Point(15, 12);
+            lblThreatDistribution.Name = "lblThreatDistribution";
+            lblThreatDistribution.Size = new Size(174, 25);
+            lblThreatDistribution.TabIndex = 0;
+            lblThreatDistribution.Text = "Threat Distribution";
+            // 
+            // lblSafeCount
+            // 
+            lblSafeCount.AutoSize = true;
+            lblSafeCount.BackColor = Color.Transparent;
+            lblSafeCount.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSafeCount.ForeColor = Color.FromArgb(34, 197, 94);
+            lblSafeCount.Location = new Point(20, 59);
+            lblSafeCount.Name = "lblSafeCount";
+            lblSafeCount.Size = new Size(88, 23);
+            lblSafeCount.TabIndex = 1;
+            lblSafeCount.Text = "\U0001f7e2 Safe: 0";
+            // 
+            // lblSuspiciousCount
+            // 
+            lblSuspiciousCount.AutoSize = true;
+            lblSuspiciousCount.BackColor = Color.Transparent;
+            lblSuspiciousCount.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSuspiciousCount.ForeColor = Color.FromArgb(245, 158, 11);
+            lblSuspiciousCount.Location = new Point(20, 94);
+            lblSuspiciousCount.Name = "lblSuspiciousCount";
+            lblSuspiciousCount.Size = new Size(135, 23);
+            lblSuspiciousCount.TabIndex = 2;
+            lblSuspiciousCount.Text = "\U0001f7e1 Suspicious: 0";
+            // 
+            // lblThreatCount
+            // 
+            lblThreatCount.AutoSize = true;
+            lblThreatCount.BackColor = Color.Transparent;
+            lblThreatCount.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblThreatCount.ForeColor = Color.FromArgb(239, 68, 68);
+            lblThreatCount.Location = new Point(20, 129);
+            lblThreatCount.Name = "lblThreatCount";
+            lblThreatCount.Size = new Size(112, 23);
+            lblThreatCount.TabIndex = 3;
+            lblThreatCount.Text = "🔴 Threats: 0";
+            // 
             // DashboardForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 17, 32);
-            ClientSize = new Size(1182, 703);
+            ClientSize = new Size(1182, 735);
             Controls.Add(pnlUserInfo);
             Controls.Add(pnlSecurityOverview);
             Controls.Add(pnlProfile);
@@ -875,6 +943,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlScanActivity.ResumeLayout(false);
             pnlScanActivity.PerformLayout();
+            pnlThreatDistribution.ResumeLayout(false);
+            pnlThreatDistribution.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -942,5 +1012,10 @@
         private Label lblScanActivity;
         private PictureBox pictureBox1;
         private Label lblScanActivityData;
+        private Panel pnlThreatDistribution;
+        private Label lblThreatDistribution;
+        private Label lblSuspiciousCount;
+        private Label lblSafeCount;
+        private Label lblThreatCount;
     }
 }
