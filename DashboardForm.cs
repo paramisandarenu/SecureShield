@@ -344,5 +344,15 @@ namespace SecureShield
         {
 
         }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblRecentScansTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
